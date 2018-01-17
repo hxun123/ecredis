@@ -17,13 +17,13 @@ package main
 import "github.com/hxun123/ecredis"
 
 func main() {
-    // 使用自定义配置文件，使用绝对路径，需要按照示例配置编写
+    // 使用自定义配置文件，使用绝对路径，需要按照示例配置格式编写
     configPath := "/Users/huangxun/workspace/go/config/redis.json"
 
     // 若测试，传空即可
     // configPath := ""
 
-    // 获取client
+    // 获取 client
     client := ecredis.NewClient("crm.slave", configPath)
 
     // 字符串 set
