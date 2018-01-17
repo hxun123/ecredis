@@ -20,7 +20,7 @@ type conf struct {
 }
 
 // 获取配置
-func getConfig(key,configPath string) conf {
+func getConfig(key, configPath string) conf {
 	// 定义配置变量
 	var config map[string]map[string][]conf
 
@@ -81,9 +81,9 @@ func getRandMod(key string, length int) int {
 }
 
 // 新建client
-func NewClient(key string) *redis.Client {
+func NewClient(key, configPath string) *redis.Client {
 	// 根据key获取配置信息
-	config := getConfig(key)
+	config := getConfig(key, configPath)
 	addr := config.Addr
 	password := config.Password
 	db := config.Db
