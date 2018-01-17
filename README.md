@@ -4,13 +4,11 @@
 `go get -u github.com/hxun123/ecredis`
 ## 代码示例
 进入当前包example目录，使用go run命令执行即可看到效果：
-```
-* string.go 字符串相关操作
-* hash.go 哈希相关操作
-* set.go 集合相关操作
-* list.go 链表相关操作
-* connectPool.go 连接池测试
-```
+* 字符串相关操作：string.go
+* 哈希相关操作：hash.go
+* 集合相关操作：set.go
+* 链表相关操作：list.go
+* 连接池测试：connectPool.go
 ## 使用示例
 新建文件redisTest.go，内容如下：
 ```
