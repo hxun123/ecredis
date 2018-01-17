@@ -3,7 +3,7 @@
 ## 下载
 `go get -u github.com/hxun123/ecredis`
 ## 代码示例
-进入当前包example目录，直接执行如下：
+进入当前包example目录，直接执行如下即可看到效果：
 ```
 go run string.go
 go run hash.go
@@ -20,20 +20,23 @@ import "github.com/hxun123/ecredis"
 
 func main() {
     // 使用自定义配置文件，使用绝对路径，需要按照示例配置编写
-	configPath := "/Users/huangxun/workspace/go/config/redis.json"
+    configPath := "/Users/huangxun/workspace/go/config/redis.json"
 
-	// 若测试，传空即可
-	// configPath := ""
+    // 若测试，传空即可
+    // configPath := ""
 
-	// 获取client
-	client := ecredis.NewClient("crm.slave", configPath)
+    // 获取client
+    client := ecredis.NewClient("crm.slave", configPath)
 
-	// 字符串 get
+    // 字符串 get
     name, err := client.Get("name").Result()
-   	if err != nil {
-    	fmt.Println(err)
+    if err != nil {
+        fmt.Println(err)
     }
     fmt.Println(name)
 }
-
+```
+执行如下：
+```
+go run redisTest.go
 ```
