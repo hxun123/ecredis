@@ -14,7 +14,10 @@
 ```
 package main
 
-import "github.com/hxun123/ecredis"
+import (
+	"github.com/hxun123/ecredis"
+	"fmt"
+)
 
 func main() {
     // 使用自定义配置文件，使用绝对路径，需要按照示例配置格式编写
