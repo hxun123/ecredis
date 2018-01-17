@@ -3,13 +3,13 @@
 ## 下载
 `go get -u github.com/hxun123/ecredis`
 ## 代码示例
-进入当前包example目录，直接执行如下即可看到效果：
+进入当前包example目录，使用go run命令执行即可看到效果：
 ```
-go run string.go
-go run hash.go
-go run set.go
-go run list.go
-go run connectPool.go
+* string.go 字符串相关操作
+* hash.go 哈希相关操作
+* set.go 集合相关操作
+* list.go 链表相关操作
+* connectPool.go 连接池测试
 ```
 ## 使用示例
 新建文件redisTest.go，内容如下：
