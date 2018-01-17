@@ -9,6 +9,7 @@ import (
 	"hash/crc32"
 	"math/big"
 	"strings"
+	"os"
 )
 
 // 定义配置结构
@@ -23,8 +24,11 @@ func getConfig(key string) conf {
 	// 定义配置变量
 	var config map[string]map[string][]conf
 
-	// 从文件读取json, todo $GOPATH 替换为真实目录
-	jsonData, err := ioutil.ReadFile("$GOPATH/github.com/hxun123/ecredis/config/redis.json")
+	// 获取配置文件目录
+	configPath := os.Getenv("GOPATH") + "/src/github.com/hxun123/ecredis/config/redis.json"
+
+	// 从文件读取json
+	jsonData, err := ioutil.ReadFile(configPath)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -82,8 +86,8 @@ func NewClient(key string) *redis.Client {
 	password := config.Password
 	db := config.Db
 
-	// 设置连接池的大小为1000
-	poolSize := 1000
+	// 设置连接池的大小为5
+	poolSize := 5
 
 	// 创建client
 	client := redis.NewClient(&redis.Options{
