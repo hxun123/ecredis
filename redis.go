@@ -20,12 +20,14 @@ type conf struct {
 }
 
 // 获取配置
-func getConfig(key string) conf {
+func getConfig(key,configPath string) conf {
 	// 定义配置变量
 	var config map[string]map[string][]conf
 
 	// 获取配置文件目录
-	configPath := os.Getenv("GOPATH") + "/src/github.com/hxun123/ecredis/config/redis.json"
+	if configPath == "" {
+		configPath = os.Getenv("GOPATH") + "/src/github.com/hxun123/ecredis/config/redis.json"
+	}
 
 	// 从文件读取json
 	jsonData, err := ioutil.ReadFile(configPath)
