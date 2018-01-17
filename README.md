@@ -26,6 +26,9 @@ func main() {
     // 获取client
     client := ecredis.NewClient("crm.slave", configPath)
 
+    // 字符串 set
+    client.Set("name", "test", 0).Err()
+
     // 字符串 get
     name, err := client.Get("name").Result()
     if err != nil {
@@ -38,3 +41,4 @@ func main() {
 ```
 go run redisTest.go
 ```
+输出 test 说明成功
