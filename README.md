@@ -42,3 +42,6 @@ func main() {
 go run redisTest.go
 ```
 输出 test 说明成功
+## 注意事项
+* 配置文件默认连接地址为 localhost:6379，不传配置文件时需本地redis服务开启才能运行
+* 自定义配置需注意redis服务是否可用
